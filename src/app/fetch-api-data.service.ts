@@ -180,8 +180,8 @@ export class FetchApiDataService {
     localStorage.setItem('user', JSON.stringify(user));
 
     return this.http
-      .put(
-        apiUrl + `users/${user.Username}/${movieId}`,
+      .post(
+        apiUrl + `users/${user.Username}/movies/${movieId}`,
         {},
         {
           headers: new HttpHeaders({
@@ -209,7 +209,7 @@ export class FetchApiDataService {
     localStorage.setItem('user', JSON.stringify(user));
 
     return this.http
-      .delete(apiUrl + `users/${user.Username}/${movieId}`, {
+      .delete(apiUrl + `users/${user.Username}/movies/${movieId}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
